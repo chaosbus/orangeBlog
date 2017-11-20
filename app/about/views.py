@@ -1,4 +1,4 @@
-from flask import render_template
+from flask import render_template, request
 from flask_login import login_required
 from . import bp_about
 # from .. import db
@@ -15,11 +15,15 @@ def index():
 @bp_about.route('/1')
 @login_required
 def index1():
-    return render_template('about/index.html')
+    return 'Only authenticated user'
 
 
 @bp_about.route('/2')
 def index2():
+    a = request.args.get('next')
+    b = request.args
+    c = request
+    e = 0
     return render_template('about/index.html')
 
 
