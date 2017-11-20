@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}登陆{% endblock %}
+
+
+{% block head %}
+{{ super() }}
+<style>
+.col-center-block {
+    float: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+</style>
+{% endblock %}
+
+
+{% block page_content %}
+<div class="container">
+    <div class="col-xs-6 col-md-3 col-center-block">
+        <h1 style="text-align:center">登陆</h1>
+        {% from 'auth/macro.html' import m_login %}
+        {{ m_login(form) }}
+    </div>
+ </div>
+{% endblock %}}
