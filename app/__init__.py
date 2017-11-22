@@ -5,9 +5,10 @@ from flask_login import LoginManager
 # from flask_nav import Nav
 # from flask_nav.elements import Navbar, View, Subgroup, Separator
 from flask_sqlalchemy import SQLAlchemy
+from flask_mail import Mail
 from config import config
 
-
+mail = Mail()
 bootstrap = Bootstrap()
 db = SQLAlchemy()
 login_manager = LoginManager()
@@ -25,6 +26,9 @@ def create_app(config_name):
     db.init_app(app)
     # login
     login_manager.init_app(app)
+    # email
+    mail.init_app(app)
+
     # blueprint
     from .main import bp_main
     app.register_blueprint(bp_main, url_prefix='/')
