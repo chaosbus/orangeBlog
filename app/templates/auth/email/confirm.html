@@ -1,0 +1,8 @@
+<p>{{ user.username }}，您好</p>
+<p></p>
+<p>欢迎访问<a href="http://www.solodisplay.com"><b>橙色的皮蛋</b></a>！</p>
+<p>这是一封确认邮件，<a href="{{ url_for('auth.confirm', token=token, _external=True) }}">点击这里</a>完成帐户确认。</p>
+<p>您也可以点击以下链接：</p>
+<p><a href="{{ url_for('auth.confirm', token=token, _external=True) }}">{{ url_for('auth.confirm', token=token, _external=True) }}</a></p>
+<p>The Flasky Team</p>
+<p><small>提示：请勿回复该邮件</small></p>

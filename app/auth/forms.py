@@ -5,6 +5,7 @@ from wtforms import ValidationError
 from wtforms.validators import DataRequired, Length, Email, Regexp, EqualTo
 from ..models import User
 
+
 class LoginForm(FlaskForm):
     account = StringField(u'帐号/邮箱/手机..', validators=[DataRequired(), Length(1, 64)])
     password = PasswordField(u'密码..', validators=[DataRequired()])
@@ -13,7 +14,7 @@ class LoginForm(FlaskForm):
 
 
 class RegisterForm(FlaskForm):
-    username = StringField(u'帐号', validators=[DataRequired(), Regexp('^[A-Za-z][A-Za-z0-9_.]*$', 0, u'字母，数字，_，.')])
+    username = StringField(u'帐号', validators=[DataRequired(), Regexp('^[A-Za-z][A-Za-z0-9_.]*$', 0, u'只允许字母，数字，下划线，点号')])
     email = StringField(u'邮箱', validators=[DataRequired(), Length(1, 64), Email()])
     password = PasswordField(u'密码', validators=[DataRequired(), Length(4, 64), EqualTo('password2', message=u'密码不一致')])
     password2 = PasswordField(u'确认密码', validators=[DataRequired()])

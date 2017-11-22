@@ -1,0 +1,7 @@
+{{ user.username }}，您好
+
+欢迎访问"橙色的皮蛋"
+
+这是一封确认邮件，登陆以下连接完成帐户确认：{{ url_for('auth.confirm', token=token, _external=True) }}
+
+提示：请勿回复该邮件
