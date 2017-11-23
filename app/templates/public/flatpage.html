@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{#{% block page_content %}#}
+{#    <h2>{{ page.title }}</h2>#}
+{#    {{ page.html|safe }}#}
+{#{% endblock page_content %}#}
+
+{% from 'public/macro.html' import flatpage %}
+
+{% block page_content %}
+    <p>===============</p>
+    {{ flatpage(page) }}
+{% endblock page_content %}
+

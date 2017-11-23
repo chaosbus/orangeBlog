@@ -6,11 +6,16 @@ from flask_login import LoginManager
 # from flask_nav.elements import Navbar, View, Subgroup, Separator
 from flask_sqlalchemy import SQLAlchemy
 from flask_mail import Mail
+from flask_misaka import Misaka
+from flask_flatpages import FlatPages
 from config import config
+from pygments_ext import PygmentsExtension
 
 mail = Mail()
+misaka = Misaka()
 bootstrap = Bootstrap()
 db = SQLAlchemy()
+pages = FlatPages()
 login_manager = LoginManager()
 login_manager.session_protection = 'strong'
 login_manager.login_view = 'auth.login'
@@ -28,6 +33,10 @@ def create_app(config_name):
     login_manager.init_app(app)
     # email
     mail.init_app(app)
+    # misaka
+    # misaka.init_app(app)
+    # flatpages
+    pages.init_app(app)
 
     # blueprint
     from .main import bp_main
@@ -36,5 +45,7 @@ def create_app(config_name):
     app.register_blueprint(bp_about, url_prefix='/about')
     from .auth import bp_auth
     app.register_blueprint(bp_auth, url_prefix='/auth')
+
+    app.jinja_env.add_extension(PygmentsExtension)
 
     return app

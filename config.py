@@ -8,9 +8,12 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 class Config():
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'NjQwNzdlOWZmYmE0ZTNmOTQ1MWNhOGM4YjA4NzhiMGMgIC0K'
     SSL_DISABLE = False
+    # sqlalchemy {
     SQLALCHEMY_COMMIT_ON_TEARDOWN = True
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_RECORD_QUERIES = True
+    # }
+    # mail {
     MAIL_SERVER = 'smtp.mxhichina.com'
     MAIL_PORT = 465
     MAIL_USE_TLS = False
@@ -21,6 +24,15 @@ class Config():
     MAIL_PASSWORD = 'Dswybsmm999'
     MAIL_DEFAULT_SENDER = 'no-reply <blog@solodisplay.com>'
     ORANGE_MAIL_SUBJECT_PREFIX = u'[橙色的皮蛋]'
+    # }
+    # flatpages {
+    FLATPAGES_ROOT = 'docs'
+    FLATPAGES_EXTENSION = ['.txt', '.md']
+    # FLATPAGES_ENCODING = 'utf8'
+    # FLATPAGES_HTML_RENDERER = ''
+    FLATPAGES_MARKDOWN_EXTENSIONS = ['toc', 'codehilite', 'headerid']
+    FLATPAGES_AUTO_RELOAD = True
+    # }
     FLASKY_ADMIN = os.environ.get('FLASKY_ADMIN')
 
     @staticmethod

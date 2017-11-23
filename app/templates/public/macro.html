@@ -1,0 +1,4 @@
+{% macro flatpage(page) %}
+    <h2>{{ page.title }}</h2>
+    {{ page.html|safe }}
+{% endmacro %}
