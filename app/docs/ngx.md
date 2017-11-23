@@ -1,3 +1,7 @@
+title: Hello World
+date: 2012-03-04
+tags: [general, awesome, stuff]
+
 # nginx完整心得笔记（内测不删档，送宝刀屠龙）
 
 > 集天地之精华\
@@ -24,7 +28,7 @@
 | location /uri        | 不带任何修饰符，也表示前缀匹配，但是在正则匹配之后                          |
 | location /           | 通用匹配，任何未匹配到其它location的请求都会匹配到，相当于switch中的default |
 
-前缀匹配时，Nginx不对url做编码，因此请求为`/static/20%/aa`，可以被规则`^~ /static/ /aa`匹配到（注意是空格） 
+前缀匹配时，Nginx不对url做编码，因此请求为`/static/20%/aa`，可以被规则`^~ /static/ /aa`匹配到（注意是空格）
 
 多个`location`配置的情况下匹配顺序为:
 
@@ -269,7 +273,7 @@ Sets the shared memory zone and the maximum allowed number of connections for a 
 
 ```
 Syntax:	limit_rate rate;
-Default:	
+Default:
 limit_rate 0;
 Context:	http, server, location, if in location
 ```
@@ -277,7 +281,7 @@ Limits the rate of response transmission to a client. The rate is specified in b
 
 ```
 Syntax:	limit_rate_after size;
-Default:	
+Default:
 limit_rate_after 0;
 Context:	http, server, location, if in location
 This directive appeared in version 0.8.0.
@@ -325,16 +329,16 @@ server {
     listen 22223;
 
     location /test_limit {
-    
+
         # 某个IP来源的请求同时只能1个
         limit_conn ConnIP 1;
         # 服务端只接受最大100个连接
         limit_conn ConnServer 100;
-        
+
         # 限流速
         limit_rate 100k;
         limit_rate_after 10M;
-        
+
         # 限请求频率
         limit_req zone=ReqIP burst=30 nodelay;
         limit_req zone=ReqServer burst=40;
@@ -435,7 +439,7 @@ server {
         proxy_set_header REMOTE-HOST $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
     }
-    
+
     # 写法2
     location /ismp/ngcc/qryspinfo {
         access_log logs/ngcc/qryspinfo_access.log pxylog;
@@ -511,7 +515,7 @@ Context:	server, location, if
 Syntax:	proxy_redirect default;
 proxy_redirect off;
 proxy_redirect redirect replacement;
-Default:	
+Default:
 proxy_redirect default;
 Context:	http, server, location
 ```
@@ -549,7 +553,7 @@ Location: http://hello
 ##########
 # before #
 ##########
-[sbeamer ~]$ curl -I http://cdserver:64000/AMS_HN 
+[sbeamer ~]$ curl -I http://cdserver:64000/AMS_HN
 HTTP/1.1 302 Found
 Server: openresty
 Date: Fri, 10 Nov 2017 07:14:21 GMT
@@ -573,7 +577,7 @@ Location: http://hello
 
 ```
 Syntax:	port_in_redirect on | off;
-Default:	
+Default:
 port_in_redirect on;
 Context:	http, server, location
 ```
@@ -618,7 +622,7 @@ Set-Cookie: JSESSIONID=79D0B6FF7584FBD324D12989859A7FE7; Path=/AMS_HN; HttpOnly
 
 ```
 Syntax:	server_name_in_redirect on | off;
-Default:	
+Default:
 server_name_in_redirect off;
 Context:	http, server, location
 ```
@@ -663,7 +667,7 @@ The use of a port in redirects is controlled by the port_in_redirect directive.
 # http://host/apple => http://host/apple/
 rewrite ^(.*[^/])$ $1/ permanent;
 
- 
+
 # 删除URL结尾的"/"，尽量避免此操作
 # http://host/banana/ => http://host/banana
 rewrite ^/(.*)/$ /$1 permanent;
@@ -674,7 +678,7 @@ rewrite ^/(.*)/$ /$1 permanent;
 - 彻底关闭access.log
 
 ```nginx
-access_log off; 
+access_log off;
 ```
 
 ### 3. 隐藏nginx版本
@@ -693,7 +697,7 @@ server_tokens off;
 
 ```
 Syntax:	auth_basic string | off;
-Default:	
+Default:
 auth_basic off;
 Context:	http, server, location, limit_except
 ```
@@ -792,15 +796,15 @@ server {
     # 这里需要设置，避免302，301跳转导致url变化
     # 【FIXME】还需要深入研究
     proxy_redirect http:// $scheme://;
-    port_in_redirect on; 
+    port_in_redirect on;
 
     access_log logs/tomcat_access.log;
     error_log  logs/tomcat_error.log error;
 
-    location / { 
+    location / {
         root   html;
         index  index.html index.htm;
-    }   
+    }
 
     location /sh_rest {
         proxy_pass http://10.3.4.208:8180;
@@ -821,9 +825,9 @@ server {
     # 将"ismp/download"通过rewrite修改为"/"达到访问代理的目的
     location /ismp/download/ {
         auth_basic "天王盖地虎";
-        auth_basic_user_file htpasswd; 
+        auth_basic_user_file htpasswd;
         autoindex on;
-    
+
         rewrite ^/ismp/download/(.*)$ /$1 break;
         proxy_pass http://10.3.4.208:8000;
 

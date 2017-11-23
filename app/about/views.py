@@ -99,12 +99,12 @@ def pygments_css():
     return pygments_style_defs('tango'), 200, {'Content-Type': 'text/css'}
 
 
-@bp_about.route('/md')
+@bp_about.route('/md1')
 def mdtest():
     return render_template('about/markdown.html', md=AAA)
 
 
-@bp_about.route('/<path:path>')
+@bp_about.route('/md/<path:path>')
 def pagege(path):
     page = pages.get_or_404(path)
     # template = page.meta.get('templates.public', 'flatpage.html')
@@ -122,4 +122,21 @@ def pagege(path):
 #                     key=lambda p: p.meta['published'])
 #     return render_template('articles.html', articles=latest[:10])
 
+
+@bp_about.route('/docs')
+def index111():
+    pp = (p for p in pages if 'date' in p.meta)
+    return render_template('public/index.html', pages=pp)
+
+
+@bp_about.route('/docss/<string:tag>/')
+def tag(tag):
+    tagged = [p for p in pages if tag in p.meta.get('tags', [])]
+    return render_template('public/tag.html', pages=tagged, tag=tag)
+
+
+@bp_about.route('/docs/<path:path>')
+def pagefrunc(path):
+    pp = pages.get_or_404(path)
+    return render_template('public/flatpage.html', page=pp)
 

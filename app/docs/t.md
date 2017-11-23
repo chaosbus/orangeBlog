@@ -1,4 +1,6 @@
-
+title: Hesdfsrld
+date: 2022-06-21
+tags: [general, awesome, stuff]
 
 ### 3. 流量限制与请求限制
 
@@ -33,20 +35,20 @@ server {
     listen 22223;
 
     location /test_limit {
-    
+
         # 某个IP来源的请求同时只能1个
         limit_conn ConnIP 1;
         # 服务端只接受最大100个连接
         limit_conn ConnServer 100;
-        
+
         # 限流速
         limit_rate 100k;
         limit_rate_after 10M;
-        
+
         # 限请求频率
         limit_req zone=ReqIP burst=30 nodelay;
         limit_req zone=ReqServer burst=40;
-    } 
+    }
 }
 :::
 

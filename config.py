@@ -27,7 +27,7 @@ class Config():
     # }
     # flatpages {
     FLATPAGES_ROOT = 'docs'
-    FLATPAGES_EXTENSION = ['.txt', '.md']
+    FLATPAGES_EXTENSION = '.md'
     # FLATPAGES_ENCODING = 'utf8'
     # FLATPAGES_HTML_RENDERER = ''
     FLATPAGES_MARKDOWN_EXTENSIONS = ['toc', 'codehilite', 'headerid']

@@ -34,7 +34,7 @@ def create_app(config_name):
     # email
     mail.init_app(app)
     # misaka
-    # misaka.init_app(app)
+    misaka.init_app(app)
     # flatpages
     pages.init_app(app)
 
