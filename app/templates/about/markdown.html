@@ -10,7 +10,9 @@
 {% block page_content %}
 <div class="container">
 <h1>db show</h1>
-
-<div>{{ md|markdown }}</div>
+    <div>{{ md|markdown }}</div>
+{#    {% filter markdown %}#}
+{#        {{ md }}#}
+{#    {% endfilter %}#}
 </div>
 {% endblock %}}

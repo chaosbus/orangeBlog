@@ -4,8 +4,10 @@ tags: [general, awesome, stuff]
 
 # nginx完整心得笔记（内测不删档，送宝刀屠龙）
 
-> 集天地之精华\
-> 呕心吐血未完成\
+> 集天地之精华
+
+> 呕心吐血未完成
+
 > FIXME
 
 [TOC]
@@ -45,6 +47,10 @@ tags: [general, awesome, stuff]
 
 #### 1.2 你哪个单位的
 
+- [ ] todo
+
+- [x] done
+
 - 空间单位
 
   k/K : KiloByte\
@@ -68,176 +74,6 @@ tags: [general, awesome, stuff]
 
 ```txt
 $ancient_browser
-$arg_
-$args
-$binary_remote_addr (ngx_http_core_module)
-$binary_remote_addr (ngx_stream_core_module)
-$body_bytes_sent
-$bytes_received
-$bytes_sent (ngx_http_core_module)
-$bytes_sent (ngx_http_log_module)
-$bytes_sent (ngx_stream_core_module)
-$connection (ngx_http_core_module)
-$connection (ngx_http_log_module)
-$connection (ngx_stream_core_module)
-$connection_requests (ngx_http_core_module)
-$connection_requests (ngx_http_log_module)
-$connections_active
-$connections_reading
-$connections_waiting
-$connections_writing
-# HTTP请求信息里的"Content-Length";
-$content_length
-$content_type
-$cookie_
-$date_gmt
-$date_local
-$document_root
-$document_uri
-$fastcgi_path_info
-$fastcgi_script_name
-$gzip_ratio
-$host
-$hostname (ngx_http_core_module)
-$hostname (ngx_stream_core_module)
-$http2
-$http_
-$https
-$invalid_referer
-$is_args
-$jwt_claim_
-$jwt_header_
-$limit_rate
-$memcached_key
-$modern_browser
-$msec (ngx_http_core_module)
-$msec (ngx_http_log_module)
-$msec (ngx_stream_core_module)
-$msie
-$nginx_version (ngx_http_core_module)
-$nginx_version (ngx_stream_core_module)
-$pid (ngx_http_core_module)
-$pid (ngx_stream_core_module)
-$pipe (ngx_http_core_module)
-$pipe (ngx_http_log_module)
-$protocol
-$proxy_add_x_forwarded_for
-$proxy_host
-$proxy_port
-$proxy_protocol_addr (ngx_http_core_module)
-$proxy_protocol_addr (ngx_stream_core_module)
-$proxy_protocol_port (ngx_http_core_module)
-$proxy_protocol_port (ngx_stream_core_module)
-$query_string
-$realip_remote_addr (ngx_http_realip_module)
-$realip_remote_addr (ngx_stream_realip_module)
-$realip_remote_port (ngx_http_realip_module)
-$realip_remote_port (ngx_stream_realip_module)
-$realpath_root
-$remote_addr (ngx_http_core_module)
-$remote_addr (ngx_stream_core_module)
-$remote_port (ngx_http_core_module)
-$remote_port (ngx_stream_core_module)
-$remote_user
-$request
-$request_body
-$request_body_file
-$request_completion
-$request_filename
-$request_id
-$request_length (ngx_http_core_module)
-$request_length (ngx_http_log_module)
-$request_method
-$request_time (ngx_http_core_module)
-$request_time (ngx_http_log_module)
-$request_uri
-# request scheme, “http” or “https”
-$scheme
-$secure_link
-$secure_link_expires
-$sent_http_
-$sent_trailer_
-$server_addr (ngx_http_core_module)
-$server_addr (ngx_stream_core_module)
-$server_name
-$server_port (ngx_http_core_module)
-$server_port (ngx_stream_core_module)
-$server_protocol
-$session_log_binary_id
-$session_log_id
-$session_time
-$slice_range
-$spdy
-$spdy_request_priority
-$ssl_cipher (ngx_http_ssl_module)
-$ssl_cipher (ngx_stream_ssl_module)
-$ssl_ciphers (ngx_http_ssl_module)
-$ssl_ciphers (ngx_stream_ssl_module)
-$ssl_client_cert (ngx_http_ssl_module)
-$ssl_client_cert (ngx_stream_ssl_module)
-$ssl_client_escaped_cert
-$ssl_client_fingerprint (ngx_http_ssl_module)
-$ssl_client_fingerprint (ngx_stream_ssl_module)
-$ssl_client_i_dn (ngx_http_ssl_module)
-$ssl_client_i_dn (ngx_stream_ssl_module)
-$ssl_client_i_dn_legacy
-$ssl_client_raw_cert (ngx_http_ssl_module)
-$ssl_client_raw_cert (ngx_stream_ssl_module)
-$ssl_client_s_dn (ngx_http_ssl_module)
-$ssl_client_s_dn (ngx_stream_ssl_module)
-$ssl_client_s_dn_legacy
-$ssl_client_serial (ngx_http_ssl_module)
-$ssl_client_serial (ngx_stream_ssl_module)
-$ssl_client_v_end (ngx_http_ssl_module)
-$ssl_client_v_end (ngx_stream_ssl_module)
-$ssl_client_v_remain (ngx_http_ssl_module)
-$ssl_client_v_remain (ngx_stream_ssl_module)
-$ssl_client_v_start (ngx_http_ssl_module)
-$ssl_client_v_start (ngx_stream_ssl_module)
-$ssl_client_verify (ngx_http_ssl_module)
-$ssl_client_verify (ngx_stream_ssl_module)
-$ssl_curves (ngx_http_ssl_module)
-$ssl_curves (ngx_stream_ssl_module)
-$ssl_preread_server_name
-$ssl_protocol (ngx_http_ssl_module)
-$ssl_protocol (ngx_stream_ssl_module)
-$ssl_server_name (ngx_http_ssl_module)
-$ssl_server_name (ngx_stream_ssl_module)
-$ssl_session_id (ngx_http_ssl_module)
-$ssl_session_id (ngx_stream_ssl_module)
-$ssl_session_reused (ngx_http_ssl_module)
-$ssl_session_reused (ngx_stream_ssl_module)
-$status (ngx_http_core_module)
-$status (ngx_http_log_module)
-$status (ngx_stream_core_module)
-$tcpinfo_rtt
-$tcpinfo_rttvar
-$tcpinfo_snd_cwnd
-$tcpinfo_rcv_space
-$time_iso8601 (ngx_http_core_module)
-$time_iso8601 (ngx_http_log_module)
-$time_iso8601 (ngx_stream_core_module)
-$time_local (ngx_http_core_module)
-$time_local (ngx_http_log_module)
-$time_local (ngx_stream_core_module)
-$uid_got
-$uid_reset
-$uid_set
-$upstream_addr (ngx_http_upstream_module)
-$upstream_addr (ngx_stream_upstream_module)
-$upstream_bytes_received (ngx_http_upstream_module)
-$upstream_bytes_received (ngx_stream_upstream_module)
-$upstream_bytes_sent
-$upstream_cache_status
-$upstream_connect_time (ngx_http_upstream_module)
-$upstream_connect_time (ngx_stream_upstream_module)
-$upstream_cookie_
-$upstream_first_byte_time
-$upstream_header_time
-$upstream_http_
-$upstream_response_length
-$upstream_response_time
-$upstream_session_time
 $upstream_status
 $uri
 ```
@@ -503,7 +339,7 @@ Context:	server, location, if
 |-----------|-----------------------------------------------------------------------------------------------------------------------------------------|
 | last      | stops processing the current set of ngx_http_rewrite_module directives and starts a search for a new location matching the changed URI; |
 | break     | stops processing the current set of ngx_http_rewrite_module directives as with the break directive;                                     |
-| redirect  | returns a temporary redirect with the 302 code; used if a replacement string does not start with “http://”, “https://”, or “$scheme”;   |
+| redirect  | returns a temporary redirect with the 302 code; used if a replacement string does not start with “http://", “https://", or “$scheme";   |
 | permanent | returns a permanent redirect with the 301 code.                                                                                         |
 
 
@@ -520,7 +356,7 @@ proxy_redirect default;
 Context:	http, server, location
 ```
 
-Sets the text that should be changed in the “Location” and “Refresh” header fields of a proxied server response.
+Sets the text that should be changed in the “Location" and “Refresh" header fields of a proxied server response.
 
 当上游服务器应答是重定向时，可以修改报文头（HTTP协议）中的`Location`和`Refresh`值
 
@@ -627,7 +463,7 @@ server_name_in_redirect off;
 Context:	http, server, location
 ```
 
-Enables or disables the use of the primary server name, specified by the server_name directive, in absolute redirects issued by nginx. When the use of the primary server name is disabled, the name from the “Host” request header field is used. If this field is not present, the IP address of the server is used.
+Enables or disables the use of the primary server name, specified by the server_name directive, in absolute redirects issued by nginx. When the use of the primary server name is disabled, the name from the “Host" request header field is used. If this field is not present, the IP address of the server is used.
 
 The use of a port in redirects is controlled by the port_in_redirect directive.
 
@@ -702,7 +538,7 @@ auth_basic off;
 Context:	http, server, location, limit_except
 ```
 
-Enables validation of user name and password using the “HTTP Basic Authentication” protocol. The specified parameter is used as a realm. Parameter value can contain variables (1.3.10, 1.2.7). The special value off allows cancelling the effect of the auth_basic directive inherited from the previous configuration level.
+Enables validation of user name and password using the “HTTP Basic Authentication" protocol. The specified parameter is used as a realm. Parameter value can contain variables (1.3.10, 1.2.7). The special value off allows cancelling the effect of the auth_basic directive inherited from the previous configuration level.
 
 ---
 

@@ -4,6 +4,12 @@ tags: [general, awesome, stuff]
 
 ### 3. 流量限制与请求限制
 
+:::c
+int main()
+{
+return 0;
+}
+:::
 
 #### 【模块】limit_conn
 
@@ -19,7 +25,7 @@ Context:	http
 
 #### sample
 
-:::
+:::nginx
 # 以对端ip作为key
 limit_conn_zone  $binary_remote_addr  zone=ConnIP:10m;
 # 以服务端ip作为key

@@ -27,10 +27,10 @@ class Config():
     # }
     # flatpages {
     FLATPAGES_ROOT = 'docs'
-    FLATPAGES_EXTENSION = '.md'
+    FLATPAGES_EXTENSION = ['.md', '.txt', 'ini']
     # FLATPAGES_ENCODING = 'utf8'
     # FLATPAGES_HTML_RENDERER = ''
-    FLATPAGES_MARKDOWN_EXTENSIONS = ['toc', 'codehilite', 'headerid']
+    FLATPAGES_MARKDOWN_EXTENSIONS = ['codehilite']
     FLATPAGES_AUTO_RELOAD = True
     # }
     FLASKY_ADMIN = os.environ.get('FLASKY_ADMIN')

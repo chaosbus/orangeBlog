@@ -9,7 +9,8 @@ from flask_mail import Mail
 from flask_misaka import Misaka
 from flask_flatpages import FlatPages
 from config import config
-from pygments_ext import PygmentsExtension
+# from pygments_ext import PygmentsExtension
+from .xbox import jinja_filter_custom
 
 mail = Mail()
 misaka = Misaka()
@@ -37,6 +38,7 @@ def create_app(config_name):
     misaka.init_app(app)
     # flatpages
     pages.init_app(app)
+    jinja_filter_custom.init_app(app)
 
     # blueprint
     from .main import bp_main
@@ -46,6 +48,6 @@ def create_app(config_name):
     from .auth import bp_auth
     app.register_blueprint(bp_auth, url_prefix='/auth')
 
-    app.jinja_env.add_extension(PygmentsExtension)
+    # app.jinja_env.add_extension(PygmentsExtension)
 
     return app
